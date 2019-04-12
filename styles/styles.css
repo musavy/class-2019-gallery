@@ -235,6 +235,12 @@ footer {
 
 }
 
-@media only screen and (max-width: 760px){
+@media only screen and (max-width: 886px){
   /*  large screen styles */
+ * {
+   transition: all .3s ease-in-out;
+   display: block;
+ }
+ 
+ 
 }
