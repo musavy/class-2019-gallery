@@ -195,20 +195,24 @@ button {
   outline: none;
   background: none;
   margin: 0 var(--lg);
-  transition: 3s all ease-in-out;
+  transition: .3s all ease-in-out;
 }
 
-.icon {
+span.icon {
   position: relative;
   cursor: pointer;
   font-size: large;
   color: var(--gray);
-  font-size: var(--sm);
+  font-size: var(--small);
   vertical-align: middle; /* level icons with text*/
 }
 
-.flag {
+span.flag {
   color: var(--light-gray);
+}
+span.large-icon {
+  font-size:calc(var(--medium) * 2);
+  color: lightgray; 
 }
 button:hover .icon {
   color: var(--dark-gray);
@@ -220,7 +224,7 @@ button:hover::after {
   bottom: 50%;
   transform: translate(-50%, -50%);
   content: attr(data-tip);
-  font-size: var(--small);
+  font-size: calc(var(--small) / 2);
   color: var(--dark-gray);
   border-radius: var(--sm);
 }
