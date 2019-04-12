@@ -3,7 +3,9 @@
 #### Demo
 Get to know their faces !
 
-The integrify web development batch of 2019 is [here](https://github.com/musavy/class-2019-gallery)
+
+
+The integrify web development batch of 2019 is [here](https://musavy.github.io/class-2019-gallery/)
 
 ###### html, css, javascript
 
