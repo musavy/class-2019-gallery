@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  /* helos the icons be on same line as text */
+  vertical-align: baseline;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  overflow: hidden;
+}
+
+:root {
+  --root-font-size: calc(1vw + 5px);
+
+  /* set font size on parents */
+  --small: 1rem;
+  --medium: 1.5rem;
+  --large: 1.8rem;
+
+  /*  use ems for children elements & rems for anything */
+  --sm: 0.4em;
+  --md: 0.6em;
+  --lg: 1em;
+
+  --light-gray: rgb(194, 194, 194);
+  --gray: rgb(139, 139, 139);
+  --dark-gray: rgb(87, 87, 87);
+}
+
+/* style */
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+
+  /* helps set the base root font size, for the rem unit*/
+  font-size: var(--root-font-size);
+}
+
+/* img{
+  width: 25%;
+  background-size: cover;
+} */
+
+.header {
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*
+@keyframes animate {
+  0%{
+    background-image: url(1.jpg);
+  }
+  25% {
+    background-image: url(2.jpg);
+  }
+  50% {
+    background-image: url(3.jpg);
+  }
+}
+
+ */
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+}
+
+#slider {
+  flex: 60%;
+  overflow: hidden;
+}
+
+#slider figure img {
+  width: 20%;
+  float: left;
+}
+
+#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 200s slider infinite;
+}
+
+/* card */
+section.wrapper {
+  flex: 30%;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  /* border: calc(var(--sm) / 6) solid lightgray; */
+}
+
+section.wrapper > * {
+  transition: 3s all ease-iin-out;
+}
+
+section.card--top {
+  width: 100%;
+  height: auto;
+}
+
+section.wrapper,
+div.card--img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section.tools {
+  display: flex;
+  flex-flow: row column;
+  justify-content: center;
+  margin: var(--medium) 0;
+}
+
+button {
+  position: relative;
+  border: none;
+  outline: none;
+  background: none;
+  margin: 0 var(--lg);
+  transition: 3s all ease-in-out;
+}
+
+.icon {
+  position: relative;
+  cursor: pointer;
+  font-size: large;
+  color: var(--gray);
+  font-size: var(--sm);
+  vertical-align: middle; /* level icons with text*/
+}
+
+button:hover .icon {
+  color: var(--dark-gray);
+}
+
+button:hover::after {
+  position: absolute;
+  top: 100%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  content: attr(data-tip);
+  font-size: var(--small);
+  color: var(--dark-gray);
+  border-radius: var(--sm);
+}
+
+/* toggle card info*/
+.hidden {
+  display: none;
+}
+
+/* img.card--img {
+  width: 50%;
+  border-radius: 50%;
+} */

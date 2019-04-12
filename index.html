@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>gallery</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+     
+    </div>
+    <div class="container">
+      <section class="wrapper">
+        <section class="card card--top"></section>
+
+        <!-- i am giving these tool tip's, on hover -->
+        <!-- material icons cdn, allows you to use one class then apply anyof their icon names they provide -->
+        <section class="tools">
+          <button class="prev--btn" data-tip="previous">
+            <span class="material-icons icon">arrow_back</span>
+          </button>
+
+          <button class="info--btn" data-tip="see information">
+            <span class="material-icons icon circle-icon">account_circle</span>
+          </button>
+
+          <button class="next--btn" data-tip="Next">
+            <span class="material-icons icon">arrow_forward</span>
+          </button>
+        </section>
+
+        <section class="card card--bottom"></section>
+      </section>
+
+      <div id="slider">
+        <figure>
+          <img src="./assets/bg_img/img1.jpg" />
+          <img src="./assets/bg_img/img2.jpg" alt="" />
+          <img src="./assets/bg_img/img3.jpg" alt="" />
+        </figure>
+      </div>
+    </div>
+
+    <script defer type="module" src="./scripts/script.js"></script>
+  </body>
+</html>
