@@ -13,7 +13,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 :root {
@@ -51,10 +51,18 @@ body {
   background-size: cover;
 } */
 
-.header {
-  text-align: center;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+
+.header, a {
+  display: grid; 
+  place-items:center; 
+  align-items:center;
+  padding: var(--sm) 0;
+
+}
+
+
+img.integrify--logo {
+  width: 20%;
 }
 
 .container {
@@ -214,13 +222,30 @@ button:hover::after {
   border-radius: var(--sm);
 }
 
+
 /* toggle card info*/
 .hidden {
   visibility: hidden;
   transition: all 0.3s ease;
 }
 
-/* img.card--img {
-  width: 50%;
-  border-radius: 50%;
-} */
+footer {
+  text-decoration: none;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-flow: row wrap;
+}
+
+/* media queries */
+@media only screen and (max-width: 480px){
+  /*  small  screen styles */
+
+
+
+}
+
+@media only screen and (max-width: 760px){
+  /*  large screen styles */
+}
+

@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>gallery</title>
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <div class="header">
-     <h1> Class 2019 Student Gallery</h1>
-    </div>
-    <div class="container">
-      <section class="wrapper">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>gallery</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
 
-        <section class="card--top"></section>
+<body>
+  <header class="header">
+    <a href="https://www.integrify.io/en/" target="_blank">
+      <img class="integrify--logo" src="./assets/images/integrify-logo.png" alt="integrify logo" />
+  </header>
 
-        <section class="tools">
-          <button class="prev--btn" data-tip="previous">
-            <span class="material-icons icon">arrow_back</span>
-          </button>
 
-          <button class="info--btn" data-tip="see information">
-            <span class="material-icons icon circle-icon">account_circle</span>
-          </button>
+  <div class="container">
+    <section class="wrapper">
 
-          <button class="next--btn" data-tip="Next">
-            <span class="material-icons icon">arrow_forward</span>
-          </button>
-        </section>
+      <section class="card--top"></section>
+
+      <section class="tools">
+        <button class="prev--btn" data-tip="previous">
+          <span class="material-icons icon">arrow_back</span>
+        </button>
+
+        <button class="info--btn" data-tip="see information">
+          <span class="material-icons icon circle-icon">account_circle</span>
+        </button>
+
+        <button class="next--btn" data-tip="Next">
+          <span class="material-icons icon">arrow_forward</span>
+        </button>
       </section>
+    </section>
 
-      <div id="slider">
-        <figure>
-          <img src="./assets/bg_img/img1.jpg" />
-          <img src="./assets/bg_img/img2.jpg" alt="" />
-          <img src="./assets/bg_img/img3.jpg" alt="" />
-        </figure>
-      </div>
+    <div id="slider">
+      <figure>
+        <img src="./assets/bg_img/img1.jpg" />
+        <img src="./assets/bg_img/img2.jpg" alt="" />
+        <img src="./assets/bg_img/img3.jpg" alt="" />
+      </figure>
     </div>
+  </div>
 
-    <script defer type="module" src="./scripts/script.js"></script>
-  </body>
+
+  <footer >
+    <a href="https://www.integrify.io/en/" target="_blank">
+      <img class="integrify--logo" src="./assets/images/integrify-logo.png" alt="integrify logo" />
+
+      <a target="_blank" href="https://github.com/musavy/class-2019-gallery">
+        <span class="material-icons">code</span>
+        
+        <span style="margin: 0 var(--md); color: var(--light-gray);">@2019</span>
+      </a>
+  </footer>
+
+
+  <script defer type="module" src="./scripts/script.js"></script>
+</body>
+
 </html>
