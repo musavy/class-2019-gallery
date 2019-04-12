@@ -36,7 +36,7 @@ function createContent(obj) {
             <div class="info-text hidden">
                 <p class="info-name"><span>${firstName} ${lastName}</span></p>
                 <p class="info-title"><em>${title}</em></p>
-                <p class="info-country"><span class="material-icons icon">outlined_flag</span> ${nationality}</p>
+                <p class="info-country"><span class="material-icons icon flag">outlined_flag</span> ${nationality}</p>
                 <p class="info">Skills: <br/><span class="info-white">${skills}</span></p>
                 <p class="info info-why">Why software developer: <br/> <span class="info-white">${whySoftwareDeveloper}</span></p>
                 <p class="info info-vision">Vision: <br/> <span class="info-white">${longTermVision}</span></p>

@@ -207,6 +207,9 @@ button {
   vertical-align: middle; /* level icons with text*/
 }
 
+.flag {
+  color: var(--light-gray);
+}
 button:hover .icon {
   color: var(--dark-gray);
 }
