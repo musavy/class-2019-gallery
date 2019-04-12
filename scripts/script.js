@@ -90,13 +90,9 @@ prevBtn.addEventListener("click", () => {
   if (index > 0) {
     index = index - 1;
     showData(index);
-  } else if (index == formattedStudentInfo.length) {
-    index = index - 1;
+  } else if (index === 0) {
+    index = studentInfo.length - 1;
     showData(index);
-  } else {
-    index = formattedStudentInfo.length - 1;
-    showData(index);
-    index = index - 1;
   }
 });
 
