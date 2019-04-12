@@ -1,9 +1,12 @@
-import { studentInfo } from "./studentInfo.js";
-import { formattedStudentInfo } from "./formattedStudentInfo.js";
+import {
+  studentInfo
+} from "./studentInfo.js";
+import {
+  formattedStudentInfo
+} from "./formattedStudentInfo.js";
 
 const wrapper = document.querySelector(".wrapper");
 const cardTop = document.querySelector(".card--top");
-const cardBottom = document.querySelector(".card--bottom");
 const nextBtn = document.querySelector(".next--btn");
 const infoBtn = document.querySelector(".info--btn");
 const prevBtn = document.querySelector(".prev--btn");
@@ -24,22 +27,25 @@ function createContent(obj) {
     whySoftwareDeveloper
   } = obj;
 
-  cardTop.innerHTML = `<div class="card--img-box"
-         >
-            <img class="card--img" src="assets/images/${src}" alt="${alt} style="width=50%"/>
+  console.log(skills);
+  
 
-            </div>`;
-  cardBottom.innerHTML = `<div class="info-text">
-                <p>${firstName} ${lastName}</p>
-                <p>${title}</p>
-                <p><span class="material-icons icon">outlined_flag</span> ${nationality}</p>
-                <p> ${skills}</p>
-                <p> ${whySoftwareDeveloper}</p>
-                <p>Vision: ${longTermVision}</p>
-                <p> ${motivatesMe}</p>
-                <p> ${favoriteQuote}</p>
-                <p>${joinedOn}</p>
-                </div>`;
+  cardTop.innerHTML = `
+          <div class="card--img-box">
+            <img class="card--img" src="assets/images/${src}" alt="${alt}"/>
+            <div class="info-text hidden">
+                <p class="info-name"><span>${firstName} ${lastName}</span></p>
+                <p class="info-title"><em>${title}</em></p>
+                <p class="info-country"><span class="material-icons icon">outlined_flag</span> ${nationality}</p>
+                <p class="info">Skills: <br/><span class="info-white">${skills}</span></p>
+                <p class="info info-why">Why software developer: <br/> <span class="info-white">${whySoftwareDeveloper}</span></p>
+                <p class="info info-vision">Vision: <br/> <span class="info-white">${longTermVision}</span></p>
+                <p class="info info-motivates">Motivation: <br/> <span class="info-white">${motivatesMe}</span></p>
+                <p class="info info-fav">Favorite quote: <br/> <span class="info-white">${favoriteQuote}</span></p>
+                <p class="info info-join">Joint date: <br/> <span class="info-white">${joinedOn}</span></p>
+                </div>
+            </div>`
+
 
   return obj;
 }
@@ -78,18 +84,17 @@ prevBtn.addEventListener("click", () => {
 });
 
 // ui events & handlers
-const { log } = console;
-cardBottom.classList.add("hidden");
+const {
+  log
+} = console;
 
-const showInfoFn = (e) => {
+const showInfoFn = e => {
   // show Bottom, by removing hiddenClass
-  const cardImg = document.querySelector(".card--img");
-  if (cardBottom.classList.contains("hidden")) {
-    cardBottom.classList.remove("hidden");
-    cardImg.style.width = "10vw";
+  const infoText = document.querySelector('.info-text');
+  if (infoText.classList.contains("hidden")) {
+    infoText.classList.remove("hidden");
   } else {
-    cardBottom.classList.add("hidden");
-    cardImg.style.width = "50%";
+    infoText.classList.add("hidden");
   }
 };
 infoBtn.addEventListener("click", showInfoFn);
@@ -100,5 +105,3 @@ const reloadPage = (timeDelay) => {
 };
 
 reloadPage(3000);
-
-
