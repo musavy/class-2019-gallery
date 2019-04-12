@@ -28,7 +28,7 @@ function createContent(obj) {
   } = obj;
 
   console.log(skills);
-  
+
 
   cardTop.innerHTML = `
           <div class="card--img-box">
@@ -37,7 +37,14 @@ function createContent(obj) {
                 <p class="info-name"><span>${firstName} ${lastName}</span></p>
                 <p class="info-title"><em>${title}</em></p>
                 <p class="info-country"><span class="material-icons icon flag">outlined_flag</span> ${nationality}</p>
-                <p class="info">Skills: <br/><span class="info-white">${skills}</span></p>
+                
+                <p class="info">
+                  <details>
+                    <summary class="info">Skills: </summary>
+                    <ul class="info-skills"></ul>
+                  </details>
+                </p>
+
                 <p class="info info-why">Why software developer: <br/> <span class="info-white">${whySoftwareDeveloper}</span></p>
                 <p class="info info-vision">Vision: <br/> <span class="info-white">${longTermVision}</span></p>
                 <p class="info info-motivates">Motivation: <br/> <span class="info-white">${motivatesMe}</span></p>
@@ -46,6 +53,16 @@ function createContent(obj) {
                 </div>
             </div>`
 
+  let showSkills = document.createElement('div');
+  let skill = document.createElement('li');
+  showSkills.appendChild(skill);
+
+  skills.forEach(ski => {
+    skill.innerHTML += `<li class="card--skill">${ski}</li>`;
+  })
+
+  const infoSkills = document.querySelector('.info-skills');
+  infoSkills.appendChild(showSkills);
 
   return obj;
 }
