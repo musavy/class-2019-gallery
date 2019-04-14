@@ -91,6 +91,7 @@ img.integrify--logo {
 }
 
 .slider-wrapper {
+  width:50vw;
   height: 100%;
   position: relative;
 }
@@ -98,7 +99,7 @@ img.integrify--logo {
 .slide {
   position: absolute;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   opacity: 0;
   transition: opacity 1s linear;
 }
