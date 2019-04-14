@@ -1,16 +1,16 @@
-import {
-  studentInfo
-} from "./studentInfo.js";
-import {
-  formattedStudentInfo
-} from "./formattedStudentInfo.js";
+import { studentInfo } from './studentInfo.js';
+import { formattedStudentInfo } from './formattedStudentInfo.js';
+import { addSlides } from "./addSlides.js"
+const cardTop = document.querySelector('.card--top');
+const nextBtn = document.querySelector('.next--btn');
+const infoBtn = document.querySelector('.info--btn');
+const prevBtn = document.querySelector('.prev--btn');
 
-const wrapper = document.querySelector(".wrapper");
-const cardTop = document.querySelector(".card--top");
-const nextBtn = document.querySelector(".next--btn");
-const infoBtn = document.querySelector(".info--btn");
-const prevBtn = document.querySelector(".prev--btn");
 
+
+const { log } = console
+const sliderWrapper = document.querySelector(".slider-wrapper")
+addSlides(sliderWrapper)
 function createContent(obj) {
   let {
     src,
@@ -26,9 +26,6 @@ function createContent(obj) {
     skills,
     whySoftwareDeveloper
   } = obj;
-
-  console.log(skills);
-
 
   cardTop.innerHTML = `
           <div class="card--img-box">
@@ -51,15 +48,15 @@ function createContent(obj) {
                 <p class="info info-fav">Favorite quote: <br/> <span class="info-white">${favoriteQuote}</span></p>
                 <p class="info info-join">Joint date: <br/> <span class="info-white">${joinedOn}</span></p>
                 </div>
-            </div>`
+            </div>`;
 
   let showSkills = document.createElement('div');
   let skill = document.createElement('li');
   showSkills.appendChild(skill);
 
-  skills.forEach(ski => {
+  skills.forEach((ski) => {
     skill.innerHTML += `<li class="card--skill">${ski}</li>`;
-  })
+  });
 
   const infoSkills = document.querySelector('.info-skills');
   infoSkills.appendChild(showSkills);
@@ -75,8 +72,8 @@ function showData(index) {
 let index = 0;
 showData(index);
 
-nextBtn.addEventListener("click", () => {
-  console.log(index);
+// ui events & handlers
+nextBtn.addEventListener('click', () => {
   if (index < formattedStudentInfo.length - 1) {
     index = index + 1;
     showData(index);
@@ -86,7 +83,7 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-prevBtn.addEventListener("click", () => {
+prevBtn.addEventListener('click', () => {
   if (index > 0) {
     index = index - 1;
     showData(index);
@@ -96,34 +93,22 @@ prevBtn.addEventListener("click", () => {
   }
 });
 
-// ui events & handlers
-const {
-  log
-} = console;
 
-const showInfoFn = e => {
-  // show Bottom, by removing hiddenClass
-  const infoText = document.querySelector('.info-text');
-  if (infoText.classList.contains("hidden")) {
-    infoText.classList.remove("hidden");
+
+const showInfoFn = (e) => {
+   const infoText = document.querySelector('.info-text');
+  if (infoText.classList.contains('hidden')) {
+    infoText.classList.remove('hidden');
   } else {
-    infoText.classList.add("hidden");
+    infoText.classList.add('hidden');
   }
 };
-infoBtn.addEventListener("click", showInfoFn);
+infoBtn.addEventListener('click', showInfoFn);
 
-/* temporary */
-const reloadPage = (timeDelay) => {
-  setInterval(() => {}, timeDelay);
-};
-
-reloadPage(3000);
-
-
-
-
-
-(function () {
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var slider = new Slideshow('#main-slider');
+  });
 
   function Slideshow(element) {
     this.el = document.querySelector(element);
@@ -131,11 +116,11 @@ reloadPage(3000);
   }
 
   Slideshow.prototype = {
-    init: function () {
-      this.wrapper = this.el.querySelector(".slider-wrapper");
-      this.slides = this.el.querySelectorAll(".slide");
-      this.previous = this.el.querySelector(".slider-previous");
-      this.next = this.el.querySelector(".slider-next");
+    init: function() {
+      this.wrapper = this.el.querySelector('.slider-wrapper');
+      this.slides = this.el.querySelectorAll('.slide');
+      this.previous = this.el.querySelector('.slider-previous');
+      this.next = this.el.querySelector('.slider-next');
       this.index = 0;
       this.total = this.slides.length;
       this.timer = null;
@@ -143,7 +128,7 @@ reloadPage(3000);
       this.action();
       this.stopStart();
     },
-    _slideTo: function (slide) {
+    _slideTo: function(slide) {
       var currentSlide = this.slides[slide];
       currentSlide.style.opacity = 1;
 
@@ -154,38 +139,44 @@ reloadPage(3000);
         }
       }
     },
-    action: function () {
+    action: function() {
       var self = this;
-      self.timer = setInterval(function () {
+      self.timer = setInterval(function() {
         self.index++;
         if (self.index == self.slides.length) {
           self.index = 0;
         }
         self._slideTo(self.index);
-
       }, 4500);
     },
-    stopStart: function () {
+    stopStart: function() {
       var self = this;
-      self.el.addEventListener("mouseover", function () {
-        clearInterval(self.timer);
-        self.timer = null;
-
-      }, false);
-      self.el.addEventListener("mouseout", function () {
-        self.action();
-
-      }, false);
+      self.el.addEventListener(
+        'mouseover',
+        function() {
+          clearInterval(self.timer);
+          self.timer = null;
+        },
+        false
+      );
+      self.el.addEventListener(
+        'mouseout',
+        function() {
+          self.action();
+        },
+        false
+      );
     }
-
-
   };
-
-  document.addEventListener("DOMContentLoaded", function () {
-
-    var slider = new Slideshow("#main-slider");
-
-  });
-
-
 })();
+
+
+/* temporary */
+const reloadPage = (timeDelay) => {
+  setInterval(() => { }, timeDelay);
+};
+
+reloadPage(3000);
+
+
+

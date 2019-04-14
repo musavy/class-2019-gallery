@@ -1,4 +1,4 @@
-const studentInfo = [{
+const data = [{
     firstName: "Evans",
     lastName: "Chaba",
     title: "Junior Developer",
@@ -288,6 +288,14 @@ const studentInfo = [{
   }
 ];
 
+
+
+
+const studentInfo = [...data] 
+
+
+
 export {
-  studentInfo
+  studentInfo,
+
 };
